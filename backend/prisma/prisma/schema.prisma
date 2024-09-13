@@ -1,0 +1,56 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id      Int      @id @default(autoincrement())
+  name    String
+  email   String   @unique
+  password String
+  createdAt DateTime @default(now())
+}
+
+model Admin {
+  id      Int      @id @default(autoincrement())
+  name    String
+  email   String   @unique
+  password String
+  createdAt DateTime @default(now())
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  subCategories SubCategory[]
+}
+
+model SubCategory {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  category Category @relation(fields: [categoryId], references: [id])
+  categoryId Int
+  productSubCategories ProductSubCategory[]
+}
+
+model Product {
+  id        Int      @id @default(autoincrement())
+  name      String   
+  description String?
+  price     Float
+  productSubCategories ProductSubCategory[]
+}
+
+model ProductSubCategory {
+  id        Int      @id @default(autoincrement())
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int
+  subCategory  SubCategory @relation(fields: [subCategoryId], references: [id])
+  subCategoryId Int
+}
+

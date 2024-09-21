@@ -1,12 +1,24 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@prisma/client": "^5.10.2",
+    "express": "^4.21.0"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "prisma": "^5.19.1"
   }
 }

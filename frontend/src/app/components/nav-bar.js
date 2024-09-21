@@ -35,7 +35,7 @@ export default function Navbar() {
           </ul>
         </div>
         <div class="relative inline-block group">
-          <a className="nav-btn cursor-pointer" href="/womens">
+          <a className="nav-btn cursor-pointer" href="/kids">
             Kids
           </a>
           <ul className="absolute left-0 w-48 bg-white border border-gray-200 rounded shadow-lg hidden group-hover:block">
@@ -49,7 +49,7 @@ export default function Navbar() {
           </ul>
         </div>
         <div className="relative inline-block group">
-          <a className="nav-btn cursor-pointer" href="/womens">
+          <a className="nav-btn cursor-pointer" href="/accessories">
             Accessories
           </a>
           <ul className="absolute left-0 w-48 bg-white border border-gray-200 rounded shadow-lg hidden group-hover:block">

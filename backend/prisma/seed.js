@@ -1,10 +1,14 @@
 import { PrismaClient } from "@prisma/client";
 import { seedAdmins } from "./data-seeding/admin.js";
 import { seedUsers } from "./data-seeding/user.js";
-import { seedCategories, seedCollection } from "./data-seeding/collection.js";
-import { seedSubCategories } from "./data-seeding/category.js";
-import { seedColors } from "./data-seeding/color.js";
 import { seedSizes } from "./data-seeding/size.js";
+import { seedCategories } from "./data-seeding/category.js";
+import { seedCollections } from "./data-seeding/collection.js";
+import { seedOrders } from "./data-seeding/order.js";
+import { seedProductSizes } from "./data-seeding/product_size.js";
+import { seedProducts } from "./data-seeding/product.js";
+import { seedProductCategories } from "./data-seeding/product_category.js";
+import { seedProductOrders } from "./data-seeding/product_order.js";
 
 // create new prisma client instance
 const prisma = new PrismaClient();
@@ -14,9 +18,14 @@ async function main() {
   console.log(`Start seeding ...`);
   await seedAdmins();
   await seedUsers();
-  await seedCollection();
+  await seedCollections();
   await seedCategories();
   await seedSizes();
+  await seedOrders();
+  await seedProducts();
+  await seedProductSizes();
+  await seedProductCategories();
+  await seedProductOrders();
 
   console.log(`Seeding finished.`);
 }

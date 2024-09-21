@@ -454,12 +454,10 @@ const productData = [
 ];
 
 export const seedProducts = async () => {
-  for (const data of productData) {
-    for (const p of data) {
-      const product = await prisma.product.create({
-        data: p,
-      });
-      console.log(`Created product with id: ${product.id}`);
-    }
+  for (const p of productData) {
+    const product = await prisma.product.create({
+      data: p,
+    });
+    console.log(`Created product with id: ${product.id}`);
   }
 };

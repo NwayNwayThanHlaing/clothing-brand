@@ -35,8 +35,23 @@ const productOrderData = [
 ];
 
 export const seedProductOrders = async () => {
-  const productOrders = await prisma.productOrder.createMany({
-    data: productOrderData,
-  });
-  console.log(`Created product orders`);
+  for (const po of productOrderData) {
+    const productOrder = await prisma.productOrder.create({
+      data: {
+        order: {
+          connect: {
+            id: po.order_id,
+          },
+        },
+        product: {
+          connect: {
+            id: po.product_id,
+          },
+        },
+        quantity: po.quantity,
+        price: po.price,
+      },
+    });
+    console.log(`Created product order with id: ${productOrder.id}`);
+  }
 };

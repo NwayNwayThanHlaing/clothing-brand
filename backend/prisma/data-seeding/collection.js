@@ -16,7 +16,7 @@ const collectionData = [
   },
 ];
 
-export const seedCollection = async () => {
+export const seedCollections = async () => {
   for (const c of collectionData) {
     const collection = await prisma.collection.create({
       data: c,

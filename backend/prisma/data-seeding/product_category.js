@@ -24,7 +24,7 @@ const productCategoryData = [
   },
   {
     product_id: 5,
-    collection_id: 5,
+    collection_id: 3,
     category_id: 5,
   },
 ];
@@ -32,7 +32,23 @@ const productCategoryData = [
 export const seedProductCategories = async () => {
   for (const pc of productCategoryData) {
     const productCategory = await prisma.productCategory.create({
-      data: pc,
+      data: {
+        product: {
+          connect: {
+            id: pc.product_id,
+          },
+        },
+        collection: {
+          connect: {
+            id: pc.collection_id,
+          },
+        },
+        category: {
+          connect: {
+            id: pc.category_id,
+          },
+        },
+      },
     });
     console.log(`Created product category with id: ${productCategory.id}`);
   }

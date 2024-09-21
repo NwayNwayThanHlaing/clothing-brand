@@ -63,3 +63,23 @@ const productSizeData = [
     size_id: 5,
   },
 ];
+
+export const seedProductSizes = async () => {
+  for (const ps of productSizeData) {
+    const productSize = await prisma.productSize.create({
+      data: {
+        product: {
+          connect: {
+            id: ps.product_id,
+          },
+        },
+        size: {
+          connect: {
+            id: ps.size_id,
+          },
+        },
+      },
+    });
+    console.log(`Created product size with id: ${productSize.id}`);
+  }
+};

@@ -15,6 +15,22 @@ app.get("/admins", async (req, res) => {
   res.json({ admins });
 });
 
+app.get("/users", async (req, res) => {
+  const users = await prisma.user.findMany();
+  res.json({ users });
+});
+
+app.get("/categories", async (req, res) => {
+  const categories = await prisma.category.findMany();
+  res.json({ categories });
+});
+
+app.get("/sub_categories", async (req, res) => {
+  const subCategories = await prisma.subCategory.findMany();
+  res.json({ subCategories });
+});
+
+app.get();
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });

@@ -3,33 +3,28 @@ const prisma = new PrismaClient();
 
 const orderData = [
   {
-    user_id: 1,
+    userId: 1,
     date: new Date(),
-    amount: 100,
     status: "pending",
   },
   {
-    user_id: 2,
+    userId: 2,
     date: new Date(),
-    amount: 200,
     status: "pending",
   },
   {
-    user_id: 1,
+    userId: 1,
     date: new Date(),
-    amount: 300,
     status: "pending",
   },
   {
-    user_id: 2,
+    userId: 2,
     date: new Date(),
-    amount: 400,
     status: "pending",
   },
   {
-    user_id: 2,
+    userId: 2,
     date: new Date(),
-    amount: 500,
     status: "pending",
   },
 ];
@@ -40,7 +35,7 @@ export const seedOrders = async () => {
       data: {
         user: {
           connect: {
-            id: o.user_id,
+            id: o.userId,
           },
         },
         date: o.date,

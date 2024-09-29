@@ -7,8 +7,8 @@ import { seedCollections } from "./data-seeding/collection.js";
 import { seedOrders } from "./data-seeding/order.js";
 import { seedProductSizes } from "./data-seeding/product_size.js";
 import { seedProducts } from "./data-seeding/product.js";
-import { seedProductCategories } from "./data-seeding/product_category.js";
-import { seedProductOrders } from "./data-seeding/product_order.js";
+import { seedOrderProducts } from "./data-seeding/order_product.js";
+import { seedCollectionCategories } from "./data-seeding/collection_category.js";
 
 // create new prisma client instance
 const prisma = new PrismaClient();
@@ -24,8 +24,8 @@ async function main() {
   await seedOrders();
   await seedProducts();
   await seedProductSizes();
-  await seedProductCategories();
-  await seedProductOrders();
+  await seedOrderProducts();
+  await seedCollectionCategories();
 
   console.log(`Seeding finished.`);
 }

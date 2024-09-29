@@ -11,9 +11,6 @@ const collectionData = [
   {
     name: "Kids",
   },
-  {
-    name: "Accessories",
-  },
 ];
 
 export const seedCollections = async () => {

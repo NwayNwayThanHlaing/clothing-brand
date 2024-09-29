@@ -11,13 +11,6 @@ const categoryData = [
   { name: "Dresses" },
   { name: "Skirts" },
   { name: "Bags" },
-  { name: "Wallets" },
-  { name: "Jewelries" },
-  { name: "Sunglasses" },
-  { name: "Watches" },
-  { name: "Hats" },
-  { name: "Scarves" },
-  { name: "Gloves" },
 ];
 
 export const seedCategories = async () => {

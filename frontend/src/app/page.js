@@ -1,11 +1,16 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <div>
-      <div className="relative inline-block bg-white-700">
+      <div className="bg-white-700 relative w-full">
+        <div className="text-white absolute left-72 top-80 transform translate-x-56">
+          <p className="text-left text-5xl font-semibold mb-2">
+            WELCOME TO ECHO
+          </p>
+          <p className="text-left text-3xl font-thin">Shop the latest trends</p>
+          <p className="text-left text-sm font-medium">Discover more &gt;</p>
+        </div>
         <video autoPlay muted loop className="w-full h-3/4">
-          <source src="/mng.mp4" type="video/mp4" />
+          <source src="/home-video.mp4" type="video/mp4" />
         </video>
       </div>
 
@@ -16,30 +21,36 @@ export default function Home() {
       </div>
       <div className="grid grid-cols-3 px-32 py-0 mb-20">
         <div className="relative inline-block text-center">
-          <img src="/top1.avif" className="w-full p-4" />
+          <img src="/home-outerwears.jpg" className="w-full p-4" />
           <a href="/womens" className="underline hover:text-red-600">
-            Mens
+            Outerwears
           </a>
         </div>
         <div className="relative inline-block text-center">
-          <img src="/top2.avif" className="w-full p-4" />
+          <img src="/home-denims.jpeg" className="w-full p-4" />
           <a href="/womens" className="underline hover:text-red-600">
-            Womens
+            Denims
           </a>
         </div>
         <div className="relative inline-block text-center">
-          <img src="/top1.avif" className="w-full p-4" />
+          <img src="/home-tops.jpg" className="w-full p-4" />
           <a href="/womens" className="underline hover:text-red-600">
-            Kids
+            Tops
           </a>
         </div>
       </div>
       <div className="grid grid-cols-2">
         <div className="relative inline-block">
-          <img src="/dresses.webp" className="w-full" />
+          <img src="/home-dresses.webp" className="w-full" />
+          <span className="absolute bottom-3 left-5 text-white p-2">
+            Dresses &gt;&gt;
+          </span>
         </div>
         <div className="relative inline-block">
-          <img src="/bag-cover.avif" className="w-full" />
+          <img src="/home-bags.avif" className="w-full" />
+          <span className="absolute bottom-3 left-5 text-white p-2">
+            Bags &gt;&gt;
+          </span>
         </div>
       </div>
     </div>

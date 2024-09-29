@@ -3,64 +3,140 @@ const prisma = new PrismaClient();
 
 const productSizeData = [
   {
-    product_id: 1,
-    size_id: 1,
+    productId: 1,
+    sizeId: 1,
   },
   {
-    product_id: 2,
-    size_id: 2,
+    productId: 1,
+    sizeId: 2,
   },
   {
-    product_id: 3,
-    size_id: 3,
+    productId: 1,
+    sizeId: 3,
   },
   {
-    product_id: 4,
-    size_id: 4,
+    productId: 1,
+    sizeId: 4,
   },
   {
-    product_id: 5,
-    size_id: 5,
+    productId: 1,
+    sizeId: 5,
   },
   {
-    product_id: 6,
-    size_id: 1,
+    productId: 2,
+    sizeId: 2,
   },
   {
-    product_id: 7,
-    size_id: 2,
+    productId: 2,
+    sizeId: 3,
   },
   {
-    product_id: 8,
-    size_id: 3,
+    productId: 2,
+    sizeId: 4,
   },
   {
-    product_id: 9,
-    size_id: 4,
+    productId: 2,
+    sizeId: 5,
   },
   {
-    product_id: 10,
-    size_id: 5,
+    productId: 3,
+    sizeId: 1,
   },
   {
-    product_id: 11,
-    size_id: 1,
+    productId: 3,
+    sizeId: 2,
   },
   {
-    product_id: 12,
-    size_id: 2,
+    productId: 3,
+    sizeId: 3,
   },
   {
-    product_id: 13,
-    size_id: 3,
+    productId: 3,
+    sizeId: 4,
   },
   {
-    product_id: 14,
-    size_id: 4,
+    productId: 3,
+    sizeId: 5,
   },
   {
-    product_id: 15,
-    size_id: 5,
+    productId: 4,
+    sizeId: 1,
+  },
+  {
+    productId: 4,
+    sizeId: 2,
+  },
+  {
+    productId: 4,
+    sizeId: 3,
+  },
+  {
+    productId: 4,
+    sizeId: 4,
+  },
+  {
+    productId: 5,
+    sizeId: 5,
+  },
+  {
+    productId: 6,
+    sizeId: 1,
+  },
+  {
+    productId: 6,
+    sizeId: 2,
+  },
+  {
+    productId: 6,
+    sizeId: 3,
+  },
+  {
+    productId: 6,
+    sizeId: 4,
+  },
+  {
+    productId: 6,
+    sizeId: 5,
+  },
+  {
+    productId: 7,
+    sizeId: 1,
+  },
+  {
+    productId: 7,
+    sizeId: 2,
+  },
+  {
+    productId: 8,
+    sizeId: 3,
+  },
+  {
+    productId: 9,
+    sizeId: 4,
+  },
+  {
+    productId: 10,
+    sizeId: 5,
+  },
+  {
+    productId: 11,
+    sizeId: 1,
+  },
+  {
+    productId: 12,
+    sizeId: 2,
+  },
+  {
+    productId: 13,
+    sizeId: 3,
+  },
+  {
+    productId: 14,
+    sizeId: 4,
+  },
+  {
+    productId: 15,
+    sizeId: 5,
   },
 ];
 
@@ -70,12 +146,12 @@ export const seedProductSizes = async () => {
       data: {
         product: {
           connect: {
-            id: ps.product_id,
+            id: ps.productId,
           },
         },
         size: {
           connect: {
-            id: ps.size_id,
+            id: ps.sizeId,
           },
         },
       },

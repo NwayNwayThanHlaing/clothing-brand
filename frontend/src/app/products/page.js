@@ -13,14 +13,19 @@ export default function ProductPage() {
   const [sortBy, setSortBy] = useState("default");
   const [sorted, setSorted] = useState([]);
   const { type } = useContext(NavbarContext);
+  const { subType } = useContext(NavbarContext);
+  const selectedCollection = type ? `?collection=${type}` : "";
+  const selectedCategory = subType ? `&category=${subType}` : "";
 
   useEffect(() => {
-    fetch("http://localhost:3333/products?collection=" + type)
+    fetch(
+      "http://localhost:3333/products" + selectedCollection + selectedCategory
+    )
       .then((res) => res.json())
       .then((data) => {
         setSorted(data.products);
       });
-  }, [type]);
+  }, [type, subType]);
 
   // Sorting
   useEffect(() => {

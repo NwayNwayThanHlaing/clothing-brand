@@ -6,10 +6,16 @@ import Link from "next/link";
 
 export default function Navbar() {
   const { type, setType } = useContext(NavbarContext);
+  const { subType, setSubType } = useContext(NavbarContext);
   const [collections, setCollections] = useState([]);
 
   const handleType = (value) => {
     setType(value);
+    setSubType(null);
+  };
+  const handleSubType = (value, value1) => {
+    setSubType(value);
+    setType(value1);
   };
 
   useEffect(() => {
@@ -34,7 +40,6 @@ export default function Navbar() {
             </Link>
             <ul className="absolute left-0 w-48 bg-white border border-gray-200 rounded shadow-lg hidden group-hover:block">
               {collection.categories?.map((c) => {
-                console.log("c:", c);
                 return (
                   <li
                     key={c.id}
@@ -42,7 +47,7 @@ export default function Navbar() {
                   >
                     <Link
                       href="/products"
-                      onClick={() => handleType(collection.id)}
+                      onClick={() => handleSubType(c.categoryId, collection.id)}
                     >
                       {c.category.name}
                     </Link>

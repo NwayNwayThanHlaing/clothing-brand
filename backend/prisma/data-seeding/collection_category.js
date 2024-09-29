@@ -72,7 +72,15 @@ const collectionCategoryData = [
   },
   {
     collectionId: 3,
+    categoryId: 5,
+  },
+  {
+    collectionId: 3,
     categoryId: 7,
+  },
+  {
+    collectionId: 3,
+    categoryId: 8,
   },
 ];
 

@@ -232,7 +232,7 @@ const productData = [
       "Casual striped long-sleeve top with a relaxed fit, perfect for everyday wear.",
     price: 21.99,
     collectionId: 2,
-    categoryId: 2,
+    categoryId: 1,
     image: "",
   },
   {
@@ -241,7 +241,7 @@ const productData = [
       "Classic denim jacket with a cropped fit and buttoned pockets, ideal for layering.",
     price: 59.99,
     collectionId: 2,
-    categoryId: 2,
+    categoryId: 4,
     image: "",
   },
 
@@ -269,7 +269,7 @@ const productData = [
       "Flowy floral maxi dress with a wrap design, perfect for summer outings.",
     price: 49.99,
     collectionId: 2,
-    categoryId: 3,
+    categoryId: 7,
     image: "",
   },
   {
@@ -278,7 +278,7 @@ const productData = [
       "Sleek bodycon midi dress with a figure-hugging fit, great for evening events.",
     price: 39.99,
     collectionId: 2,
-    categoryId: 3,
+    categoryId: 7,
     image: "",
   },
 
@@ -288,7 +288,7 @@ const productData = [
       "Cozy knit sweater dress with a turtleneck, perfect for fall and winter.",
     price: 59.99,
     collectionId: 2,
-    categoryId: 3,
+    categoryId: 7,
     image: "",
   },
   {
@@ -297,7 +297,7 @@ const productData = [
       "Elegant high-waisted wide-leg trousers with a flowing silhouette for a chic look.",
     price: 59.99,
     collectionId: 2,
-    categoryId: 4,
+    categoryId: 3,
     image: "",
   },
 
@@ -307,7 +307,7 @@ const productData = [
       "Tapered high-rise pants with a sleek, flattering fit for any occasion.",
     price: 47.99,
     collectionId: 2,
-    categoryId: 4,
+    categoryId: 3,
     image: "",
   },
   {
@@ -316,7 +316,7 @@ const productData = [
       "Lightweight linen blend trousers with a drawstring waist, perfect for warm weather.",
     price: 39.99,
     collectionId: 2,
-    categoryId: 4,
+    categoryId: 3,
     image: "",
   },
   {
@@ -325,7 +325,7 @@ const productData = [
       "Faux leather leggings with a high-waist fit, adding edge to any outfit.",
     price: 49.99,
     collectionId: 2,
-    categoryId: 4,
+    categoryId: 3,
     image: "",
   },
   {
@@ -334,7 +334,7 @@ const productData = [
       "Casual joggers with a relaxed fit and elastic waistband for laid-back days.",
     price: 34.99,
     collectionId: 2,
-    categoryId: 4,
+    categoryId: 3,
     image: "",
   },
   {
@@ -380,7 +380,7 @@ const productData = [
       "Elegant pleated midi skirt with a flowy design, perfect for both casual and formal wear.",
     price: 49.99,
     collectionId: 2,
-    categoryId: 5,
+    categoryId: 8,
     image: "",
   },
   {
@@ -389,7 +389,7 @@ const productData = [
       "Classic denim A-line skirt with a button-front detail for a vintage-inspired look.",
     price: 39.99,
     collectionId: 2,
-    categoryId: 5,
+    categoryId: 8,
     image: "",
   },
   {
@@ -434,7 +434,7 @@ const productData = [
       "Compact crossbody bag with a chic design, perfect for carrying essentials.",
     price: 79.99,
     collectionId: 2,
-    categoryId: 8,
+    categoryId: 9,
     image: "",
   },
   {
@@ -443,7 +443,7 @@ const productData = [
       "Trendy bucket bag with a drawstring closure, great for casual outings.",
     price: 89.99,
     collectionId: 2,
-    categoryId: 8,
+    categoryId: 9,
     image: "",
   },
   {
@@ -452,7 +452,7 @@ const productData = [
       "Sleek clutch bag with a detachable chain strap, perfect for evening events.",
     price: 59.99,
     collectionId: 2,
-    categoryId: 8,
+    categoryId: 9,
     image: "",
   },
 
@@ -462,7 +462,7 @@ const productData = [
       "Classic shoulder bag with a minimalist design and gold-tone hardware.",
     price: 119.99,
     collectionId: 2,
-    categoryId: 8,
+    categoryId: 9,
     image: "",
   },
   {
@@ -471,7 +471,7 @@ const productData = [
       "Elegant quilted handbag with a chain strap, perfect for formal or casual wear.",
     price: 129.99,
     collectionId: 2,
-    categoryId: 8,
+    categoryId: 9,
     image: "",
   },
 
@@ -481,7 +481,7 @@ const productData = [
       "Cute mini crossbody bag with a structured design, ideal for a night out.",
     price: 69.99,
     collectionId: 2,
-    categoryId: 8,
+    categoryId: 9,
     image: "",
   },
   {
@@ -490,7 +490,7 @@ const productData = [
       "Wide leather belt with a large buckle, perfect for cinching dresses or oversized tops.",
     price: 34.99,
     collectionId: 2,
-    categoryId: 9,
+    categoryId: 6,
     image: "",
   },
   {
@@ -499,7 +499,7 @@ const productData = [
       "Classic reversible leather belt with two color options for added versatility.",
     price: 39.99,
     collectionId: 2,
-    categoryId: 9,
+    categoryId: 6,
     image: "",
   },
   {
@@ -534,7 +534,7 @@ const productData = [
       "Classic denim jacket with button-front closure, perfect for layering.",
     price: 29.99,
     collectionId: 3,
-    categoryId: 1,
+    categoryId: 2,
     image: "",
   },
   {
@@ -608,7 +608,7 @@ const productData = [
       "Fun sneakers with light-up soles that kids will love, perfect for playtime.",
     price: 29.99,
     collectionId: 3,
-    categoryId: 4,
+    categoryId: 5,
     image: "",
   },
 
@@ -618,7 +618,7 @@ const productData = [
       "Durable rain boots with a fun design, perfect for splashing in puddles.",
     price: 24.99,
     collectionId: 3,
-    categoryId: 4,
+    categoryId: 5,
     image: "",
   },
   {
@@ -627,7 +627,7 @@ const productData = [
       "Classic denim skirt with a frayed hem and comfortable waistband.",
     price: 14.99,
     collectionId: 3,
-    categoryId: 5,
+    categoryId: 8,
     image: "",
   },
   {
@@ -636,7 +636,7 @@ const productData = [
       "Floral print skirt with a soft, flowy design, ideal for summer days.",
     price: 19.99,
     collectionId: 3,
-    categoryId: 5,
+    categoryId: 8,
     image: "",
   },
   {
@@ -645,7 +645,7 @@ const productData = [
       "Charming ruffle sleeve dress with a flowy silhouette and soft fabric.",
     price: 24.99,
     collectionId: 3,
-    categoryId: 6,
+    categoryId: 7,
     image: "",
   },
   {
@@ -654,7 +654,7 @@ const productData = [
       "Trendy denim overall dress with adjustable straps and front pocket.",
     price: 27.99,
     collectionId: 3,
-    categoryId: 6,
+    categoryId: 7,
     image: "",
   },
   {
@@ -663,7 +663,7 @@ const productData = [
       "Fun polka dot party dress with a full skirt, ideal for special occasions.",
     price: 29.99,
     collectionId: 3,
-    categoryId: 6,
+    categoryId: 7,
     image: "",
   },
 ];

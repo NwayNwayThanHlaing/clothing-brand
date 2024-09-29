@@ -22,20 +22,20 @@ export default function ProductPage() {
       });
   }, [type]);
 
-  // Sorting;
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     if (sortBy === "ascending") {
-  //       setSorted([...sorted].sort((a, b) => a.price - b.price));
-  //     } else if (sortBy === "descending") {
-  //       setSorted([...sorted].sort((a, b) => b.price - a.price));
-  //     } else {
-  //       setSorted(sorted);
-  //     }
-  //   }, 100);
+  // Sorting
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (sortBy === "ascending") {
+        setSorted([...sorted].sort((a, b) => a.price - b.price));
+      } else if (sortBy === "descending") {
+        setSorted([...sorted].sort((a, b) => b.price - a.price));
+      } else {
+        setSorted(sorted);
+      }
+    }, 100);
 
-  //   return () => clearTimeout(timer);
-  // }, [sortBy, sorted]);
+    return () => clearTimeout(timer);
+  }, [sortBy, sorted]);
 
   return (
     <div className="flex flex-row px-2 pt-2">

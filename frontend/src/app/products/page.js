@@ -12,20 +12,28 @@ export default function ProductPage() {
   const [bool, setBool] = useState(false);
   const [sortBy, setSortBy] = useState("default");
   const [sorted, setSorted] = useState([]);
-  const { type } = useContext(NavbarContext);
-  const { subType } = useContext(NavbarContext);
-  const selectedCollection = type ? `?collection=${type}` : "";
-  const selectedCategory = subType ? `&category=${subType}` : "";
+  const { selectedCollection, setSelectedCollection } =
+    useContext(NavbarContext);
+  const { selectedCategory, setSelectedCategory } = useContext(NavbarContext);
+
+  const collectionPath = selectedCollection
+    ? `?collection=${selectedCollection.id}`
+    : "";
+  const categoryPath = selectedCategory
+    ? `&category=${selectedCategory.id}`
+    : "";
+
+  const resetCategory = () => {
+    setSelectedCategory(null);
+  };
 
   useEffect(() => {
-    fetch(
-      "http://localhost:3333/products" + selectedCollection + selectedCategory
-    )
+    fetch("http://localhost:3333/products" + collectionPath + categoryPath)
       .then((res) => res.json())
       .then((data) => {
         setSorted(data.products);
       });
-  }, [type, subType]);
+  }, [selectedCollection, selectedCategory]);
 
   // Sorting
   useEffect(() => {
@@ -45,10 +53,26 @@ export default function ProductPage() {
   return (
     <div className="flex flex-row px-2 pt-2">
       <div className="w-full">
-        <div className="py-3 px-5 grid-cols-2">
-          <Link href="/products" className="hover:underline">
-            <span>Menswear</span>
-          </Link>
+        <div className="py-3 px-5 grid-cols-2 flex justify-between">
+          <div>
+            <span className="cursor-pointer hover:underline">
+              {selectedCollection ? (
+                <span onClick={() => setSelectedCategory(null)}>
+                  {selectedCollection.name + " "}
+                </span>
+              ) : (
+                "All Products "
+              )}
+            </span>
+            {selectedCategory ? (
+              <span>
+                &gt; &nbsp;
+                {selectedCategory.name}
+              </span>
+            ) : (
+              ""
+            )}
+          </div>
 
           <div className="flex flex-row-reverse">
             <button
@@ -59,7 +83,7 @@ export default function ProductPage() {
             </button>
 
             {bool && (
-              <div className="w-1/6 fixed bg-gray-200 bg-opacity-95 right-0 top-20 flex flex-row-reverse h-screen">
+              <div className="w-1/6 fixed bg-gray-200 bg-opacity-95 right-0 top-20 flex flex-row-reverse h-screen z-50">
                 <div className="m-2">
                   <button onClick={() => setBool(false)}>
                     <FontAwesomeIcon icon={faSquareXmark} cursor={"pointer"} />
@@ -79,7 +103,7 @@ export default function ProductPage() {
             </select>
           </div>
         </div>
-        <div className="py-2 grid grid-cols-5">
+        <div className="py-2 grid grid-cols-5 z-40">
           {sorted.map((product) => (
             <ProductCard
               key={product.id}

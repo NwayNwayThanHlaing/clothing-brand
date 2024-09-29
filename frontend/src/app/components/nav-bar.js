@@ -5,26 +5,22 @@ import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function Navbar() {
-  const { type, setType } = useContext(NavbarContext);
-  const { subType, setSubType } = useContext(NavbarContext);
-  const [collections, setCollections] = useState([]);
+  const {
+    selectedCollection,
+    setSelectedCollection,
+    selectedCategory,
+    setSelectedCategory,
+    collections,
+  } = useContext(NavbarContext);
 
-  const handleType = (value) => {
-    setType(value);
-    setSubType(null);
+  const handleCollection = (col) => {
+    setSelectedCollection(col);
+    setSelectedCategory(null);
   };
-  const handleSubType = (value, value1) => {
-    setSubType(value);
-    setType(value1);
+  const handleCategory = (cat, col) => {
+    setSelectedCategory(cat);
+    setSelectedCollection(col);
   };
-
-  useEffect(() => {
-    fetch("http://localhost:3333/collections")
-      .then((res) => res.json())
-      .then((data) => {
-        setCollections(data.collections);
-      });
-  }, []);
 
   return (
     <div className="grid grid-cols-3 items-center fixed w-full text-black py-5 px-6 z-50 bg-white bg-opacity-85">
@@ -34,7 +30,7 @@ export default function Navbar() {
             <Link
               href="/products"
               className="ml-5"
-              onClick={() => handleType(collection.id)}
+              onClick={() => handleCollection(collection)}
             >
               <span>{collection.name}</span>
             </Link>
@@ -47,7 +43,7 @@ export default function Navbar() {
                   >
                     <Link
                       href="/products"
-                      onClick={() => handleSubType(c.categoryId, collection.id)}
+                      onClick={() => handleCategory(c.category, collection)}
                     >
                       {c.category.name}
                     </Link>

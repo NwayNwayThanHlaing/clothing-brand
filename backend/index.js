@@ -55,8 +55,10 @@ app.get("/orders", async (req, res) => {
 
 app.get("/products", async (req, res) => {
   const products = await prisma.product.findMany();
+
   const collection = req.query.collection;
   const category = req.query.category;
+
   if (collection && category == null) {
     const products = await prisma.product.findMany({
       where: {

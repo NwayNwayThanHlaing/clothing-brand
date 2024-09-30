@@ -94,7 +94,7 @@ export default function ProductPage() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="mr-5 rounded-md border border-gray-500"
+              className="mr-5 rounded-md"
             >
               <option unselectable="on">Sort by</option>
               <option value="default">Recommended</option>

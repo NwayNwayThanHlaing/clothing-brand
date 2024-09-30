@@ -44,7 +44,6 @@ app.get("/collections", async (req, res) => {
       },
     },
   });
-  console.log(collections);
   res.json({ collections });
 });
 

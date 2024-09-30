@@ -16,7 +16,6 @@ export const NavbarProvider = ({ children }) => {
       .then((data) => {
         setCollections(data.collections);
         setSelectedCollection(data.collections[0]);
-        console.log(data.collections[0]);
       });
   }, []);
 

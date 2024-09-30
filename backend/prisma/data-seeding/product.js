@@ -197,7 +197,7 @@ const productData = [
     price: 29.99,
     collectionId: 2,
     categoryId: 1,
-    image: "",
+    image: "/women-top1.jpeg",
   },
   {
     name: "Floral Print Top",
@@ -206,7 +206,7 @@ const productData = [
     price: 24.99,
     collectionId: 2,
     categoryId: 1,
-    image: "",
+    image: "/women-top2.avif",
   },
   {
     name: "Off-Shoulder Top",
@@ -215,7 +215,7 @@ const productData = [
     price: 27.99,
     collectionId: 2,
     categoryId: 1,
-    image: "",
+    image: "/women-top3.avif",
   },
   {
     name: "Button-Front Shirt",
@@ -224,7 +224,7 @@ const productData = [
     price: 31.99,
     collectionId: 2,
     categoryId: 1,
-    image: "",
+    image: "/women-top4.avif",
   },
   {
     name: "Striped Long Sleeve Top",
@@ -233,7 +233,7 @@ const productData = [
     price: 21.99,
     collectionId: 2,
     categoryId: 1,
-    image: "",
+    image: "/women-top5.jpeg",
   },
   {
     name: "Denim Jacket",
@@ -242,7 +242,7 @@ const productData = [
     price: 59.99,
     collectionId: 2,
     categoryId: 4,
-    image: "",
+    image: "/women-denim1.avif",
   },
 
   {
@@ -252,7 +252,7 @@ const productData = [
     price: 129.99,
     collectionId: 2,
     categoryId: 2,
-    image: "",
+    image: "/women-outerwear1.avif",
   },
   {
     name: "Puffer Vest",
@@ -261,7 +261,7 @@ const productData = [
     price: 69.99,
     collectionId: 2,
     categoryId: 2,
-    image: "",
+    image: "/women-outerwear2.jpg",
   },
   {
     name: "Floral Maxi Dress",
@@ -270,7 +270,7 @@ const productData = [
     price: 49.99,
     collectionId: 2,
     categoryId: 7,
-    image: "",
+    image: "/women-dress1.jpeg",
   },
   {
     name: "Bodycon Midi Dress",
@@ -279,7 +279,7 @@ const productData = [
     price: 39.99,
     collectionId: 2,
     categoryId: 7,
-    image: "",
+    image: "/women-dress2.avif",
   },
 
   {
@@ -289,7 +289,7 @@ const productData = [
     price: 59.99,
     collectionId: 2,
     categoryId: 7,
-    image: "",
+    image: "/women-dress3.avif",
   },
   {
     name: "High-Waist Wide Leg Trousers",
@@ -298,7 +298,7 @@ const productData = [
     price: 59.99,
     collectionId: 2,
     categoryId: 3,
-    image: "",
+    image: "/women-trouser1.avif",
   },
 
   {
@@ -308,7 +308,7 @@ const productData = [
     price: 47.99,
     collectionId: 2,
     categoryId: 3,
-    image: "",
+    image: "/women-trouser2.avif",
   },
   {
     name: "Linen Blend Trousers",
@@ -317,7 +317,7 @@ const productData = [
     price: 39.99,
     collectionId: 2,
     categoryId: 3,
-    image: "",
+    image: "/women-trouser3.avif",
   },
   {
     name: "Leather Look Leggings",
@@ -326,7 +326,7 @@ const productData = [
     price: 49.99,
     collectionId: 2,
     categoryId: 3,
-    image: "",
+    image: "/women-trouser4.avif",
   },
   {
     name: "Relaxed Fit Joggers",
@@ -335,7 +335,7 @@ const productData = [
     price: 34.99,
     collectionId: 2,
     categoryId: 3,
-    image: "",
+    image: "/women-trouser5.avif",
   },
   {
     name: "High-Waist Skinny Jeans",
@@ -344,7 +344,7 @@ const productData = [
     price: 69.99,
     collectionId: 2,
     categoryId: 4,
-    image: "",
+    image: "/women-denim2.avif",
   },
 
   {
@@ -354,7 +354,7 @@ const productData = [
     price: 74.99,
     collectionId: 2,
     categoryId: 4,
-    image: "",
+    image: "/women-denim3.avif",
   },
   {
     name: "Mom Jeans",
@@ -363,7 +363,7 @@ const productData = [
     price: 49.99,
     collectionId: 2,
     categoryId: 4,
-    image: "",
+    image: "/women-denim4.avif",
   },
   {
     name: "Cropped Skinny Jeans",
@@ -372,7 +372,7 @@ const productData = [
     price: 64.99,
     collectionId: 2,
     categoryId: 4,
-    image: "",
+    image: "/women-denim5.avif",
   },
   {
     name: "Pleated Midi Skirt",
@@ -381,7 +381,7 @@ const productData = [
     price: 49.99,
     collectionId: 2,
     categoryId: 8,
-    image: "",
+    image: "/women-skirt1.avif",
   },
   {
     name: "Denim A-Line Skirt",
@@ -390,7 +390,7 @@ const productData = [
     price: 39.99,
     collectionId: 2,
     categoryId: 8,
-    image: "",
+    image: "/women-skirt2.avif",
   },
   {
     name: "Pointed Toe Pumps",
@@ -399,7 +399,7 @@ const productData = [
     price: 89.99,
     collectionId: 2,
     categoryId: 5,
-    image: "",
+    image: "/women-shoes1.avif",
   },
   {
     name: "Leather Ankle Boots",
@@ -408,7 +408,7 @@ const productData = [
     price: 119.99,
     collectionId: 2,
     categoryId: 5,
-    image: "",
+    image: "/women-shoes2.avif",
   },
   {
     name: "Ballet Flats",
@@ -417,7 +417,7 @@ const productData = [
     price: 49.99,
     collectionId: 2,
     categoryId: 5,
-    image: "",
+    image: "/women-shoes3.avif",
   },
   {
     name: "Sneakers",
@@ -426,7 +426,7 @@ const productData = [
     price: 59.99,
     collectionId: 2,
     categoryId: 5,
-    image: "",
+    image: "/women-shoes4.avif",
   },
   {
     name: "Crossbody Bag",
@@ -435,7 +435,7 @@ const productData = [
     price: 79.99,
     collectionId: 2,
     categoryId: 9,
-    image: "",
+    image: "/women-bag1.avif",
   },
   {
     name: "Bucket Bag",
@@ -444,7 +444,7 @@ const productData = [
     price: 89.99,
     collectionId: 2,
     categoryId: 9,
-    image: "",
+    image: "/women-bag2.avif",
   },
   {
     name: "Clutch Bag",
@@ -453,7 +453,7 @@ const productData = [
     price: 59.99,
     collectionId: 2,
     categoryId: 9,
-    image: "",
+    image: "/women-bag3.avif",
   },
 
   {
@@ -463,7 +463,7 @@ const productData = [
     price: 119.99,
     collectionId: 2,
     categoryId: 9,
-    image: "",
+    image: "/women-bag4.avif",
   },
   {
     name: "Quilted Handbag",
@@ -472,7 +472,7 @@ const productData = [
     price: 129.99,
     collectionId: 2,
     categoryId: 9,
-    image: "",
+    image: "/women-bag5.avif",
   },
 
   {
@@ -482,7 +482,7 @@ const productData = [
     price: 69.99,
     collectionId: 2,
     categoryId: 9,
-    image: "",
+    image: "/women-bag6.avif",
   },
   {
     name: "Wide Leather Belt",
@@ -491,7 +491,7 @@ const productData = [
     price: 34.99,
     collectionId: 2,
     categoryId: 6,
-    image: "",
+    image: "/women-belt1.avif",
   },
   {
     name: "Reversible Leather Belt",
@@ -500,7 +500,7 @@ const productData = [
     price: 39.99,
     collectionId: 2,
     categoryId: 6,
-    image: "",
+    image: "/women-belt2.avif",
   },
   {
     name: "Graphic Print T-Shirt",
@@ -509,7 +509,7 @@ const productData = [
     price: 12.99,
     collectionId: 3,
     categoryId: 1,
-    image: "",
+    image: "/kid-top1.avif",
   },
   {
     name: "Striped Long-Sleeve Tee",
@@ -517,7 +517,7 @@ const productData = [
     price: 14.99,
     collectionId: 3,
     categoryId: 1,
-    image: "",
+    image: "/kid-top2.avif",
   },
   {
     name: "Polo Shirt",
@@ -526,7 +526,7 @@ const productData = [
     price: 19.99,
     collectionId: 3,
     categoryId: 1,
-    image: "",
+    image: "/kid-top3.avif",
   },
   {
     name: "Denim Jacket",
@@ -535,7 +535,7 @@ const productData = [
     price: 29.99,
     collectionId: 3,
     categoryId: 2,
-    image: "",
+    image: "/kid-outerwear1.jpeg",
   },
   {
     name: "Puffer Vest",
@@ -544,7 +544,7 @@ const productData = [
     price: 34.99,
     collectionId: 3,
     categoryId: 2,
-    image: "",
+    image: "/kid-outerwear2.avif",
   },
   {
     name: "Fleece Zip-Up Hoodie",
@@ -553,7 +553,7 @@ const productData = [
     price: 22.99,
     collectionId: 3,
     categoryId: 2,
-    image: "",
+    image: "/kid-outerwear3.avif",
   },
 
   {
@@ -563,7 +563,7 @@ const productData = [
     price: 27.99,
     collectionId: 3,
     categoryId: 2,
-    image: "",
+    image: "/kid-outerwear4.avif",
   },
   {
     name: "Distressed Denim Shorts",
@@ -572,7 +572,7 @@ const productData = [
     price: 14.99,
     collectionId: 3,
     categoryId: 3,
-    image: "",
+    image: "/kid-trouser1.avif",
   },
   {
     name: "Bootcut Jeans",
@@ -581,7 +581,7 @@ const productData = [
     price: 24.99,
     collectionId: 3,
     categoryId: 3,
-    image: "",
+    image: "/kid-trouser2.avif",
   },
   {
     name: "Cargo Pants",
@@ -590,7 +590,7 @@ const productData = [
     price: 24.99,
     collectionId: 3,
     categoryId: 3,
-    image: "",
+    image: "/kid-trouser3.avif",
   },
 
   {
@@ -600,7 +600,7 @@ const productData = [
     price: 17.99,
     collectionId: 3,
     categoryId: 3,
-    image: "",
+    image: "/kid-trouser4.avif",
   },
   {
     name: "Light-Up Sneakers",
@@ -609,7 +609,7 @@ const productData = [
     price: 29.99,
     collectionId: 3,
     categoryId: 5,
-    image: "",
+    image: "/kid-shoes1.avif",
   },
 
   {
@@ -619,7 +619,7 @@ const productData = [
     price: 24.99,
     collectionId: 3,
     categoryId: 5,
-    image: "",
+    image: "/kid-shoes2.avif",
   },
   {
     name: "Denim Skirt",
@@ -628,7 +628,7 @@ const productData = [
     price: 14.99,
     collectionId: 3,
     categoryId: 8,
-    image: "",
+    image: "/kid-skirt1.avif",
   },
   {
     name: "Floral Print Skirt",
@@ -637,7 +637,7 @@ const productData = [
     price: 19.99,
     collectionId: 3,
     categoryId: 8,
-    image: "",
+    image: "/kid-skirt2.avif",
   },
   {
     name: "Ruffle Sleeve Dress",
@@ -646,7 +646,7 @@ const productData = [
     price: 24.99,
     collectionId: 3,
     categoryId: 7,
-    image: "",
+    image: "/kid-dress1.avif",
   },
   {
     name: "Denim Overall Dress",
@@ -655,7 +655,7 @@ const productData = [
     price: 27.99,
     collectionId: 3,
     categoryId: 7,
-    image: "",
+    image: "/kid-dress2.avif",
   },
   {
     name: "Polka Dot Party Dress",
@@ -664,7 +664,7 @@ const productData = [
     price: 29.99,
     collectionId: 3,
     categoryId: 7,
-    image: "",
+    image: "/kid-dress3.webp",
   },
 ];
 

@@ -5,13 +5,8 @@ import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function Navbar() {
-  const {
-    selectedCollection,
-    setSelectedCollection,
-    selectedCategory,
-    setSelectedCategory,
-    collections,
-  } = useContext(NavbarContext);
+  const { setSelectedCollection, setSelectedCategory, collections } =
+    useContext(NavbarContext);
 
   const handleCollection = (col) => {
     setSelectedCollection(col);
@@ -26,7 +21,7 @@ export default function Navbar() {
     <div className="grid grid-cols-3 items-center fixed w-full text-black py-5 px-6 z-50 bg-white bg-opacity-85">
       <div className="flex space-x-1 justify-start relative">
         {collections?.map((collection) => (
-          <div className="relative inline-block group">
+          <div key={collection.id} className="relative inline-block group">
             <Link
               href="/products"
               className="ml-5"
@@ -37,17 +32,17 @@ export default function Navbar() {
             <ul className="absolute left-0 w-48 bg-white border border-gray-200 rounded shadow-lg hidden group-hover:block">
               {collection.categories?.map((c) => {
                 return (
-                  <li
-                    key={c.id}
-                    className="text-gray-700 hover:bg-gray-100 px-3 py-2"
+                  <Link
+                    href="/products"
+                    onClick={() => handleCategory(c.category, collection)}
                   >
-                    <Link
-                      href="/products"
-                      onClick={() => handleCategory(c.category, collection)}
+                    <li
+                      key={c.id}
+                      className="text-white bg-neutral-700 bg-opacity-85 px-3 py-2 hover:bg-opacity-70"
                     >
                       {c.category.name}
-                    </Link>
-                  </li>
+                    </li>
+                  </Link>
                 );
               })}
             </ul>
@@ -62,9 +57,10 @@ export default function Navbar() {
               text-4xl
               font-bold
               text-black
-              hover:text-gray-600
+              hover:text-opacity-65
+              hover:cursor-pointer
               transition-all
-              duration-300
+              duration-600
               ease-in-out
             "
           >

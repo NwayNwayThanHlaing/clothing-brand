@@ -1,15 +1,23 @@
-export default function Home() {
+import Link from "next/link";
+
+export default function HomePage() {
   return (
     <div>
       <div className="bg-white-700 relative w-full">
-        <div className="text-white absolute left-72 top-80 transform translate-x-56">
+        <div className="text-white absolute left-72 top-1/2 transform translate-x-56">
           <p className="text-left text-5xl font-semibold mb-2">
             WELCOME TO ECHO
           </p>
           <p className="text-left text-3xl font-thin">Shop the latest trends</p>
-          <p className="text-left text-sm font-medium">Discover more &gt;</p>
+          <a
+            href="/products"
+            className="text-left text-sm font-medium hover:underline"
+          >
+            Discover more
+          </a>{" "}
+          &gt;&gt;
         </div>
-        <video autoPlay muted loop className="w-full h-3/4">
+        <video autoPlay muted loop className="w-full h-3/4 z-0">
           <source src="/home-video.mp4" type="video/mp4" />
         </video>
       </div>

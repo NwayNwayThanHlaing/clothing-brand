@@ -1,12 +1,10 @@
 "use client";
-import React, { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const NavbarContext = createContext();
 
 export const NavbarProvider = ({ children }) => {
-  const [selectedCollection, setSelectedCollection] = useState({
-    id: 1,
-  });
+  const [selectedCollection, setSelectedCollection] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [collections, setCollections] = useState([]);
 

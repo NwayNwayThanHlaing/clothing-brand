@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareXmark } from "@fortawesome/free-solid-svg-icons";
 import { NavbarContext } from "../context/nav-bar";
-import Link from "next/link";
 import { useContext } from "react";
 
 export default function ProductPage() {
@@ -22,10 +21,6 @@ export default function ProductPage() {
   const categoryPath = selectedCategory
     ? `&category=${selectedCategory.id}`
     : "";
-
-  const resetCategory = () => {
-    setSelectedCategory(null);
-  };
 
   useEffect(() => {
     fetch("http://localhost:3333/products" + collectionPath + categoryPath)

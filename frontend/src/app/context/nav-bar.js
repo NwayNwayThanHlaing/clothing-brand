@@ -7,6 +7,7 @@ export const NavbarProvider = ({ children }) => {
   const [selectedCollection, setSelectedCollection] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [collections, setCollections] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:3333/collections")
@@ -25,6 +26,8 @@ export const NavbarProvider = ({ children }) => {
         selectedCategory,
         setSelectedCategory,
         collections,
+        searchValue,
+        setSearchValue,
       }}
     >
       {children}

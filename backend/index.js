@@ -1,4 +1,4 @@
-import express from "express";
+import express, { json } from "express";
 import prisma from "./lib/prisma.js";
 import cors from "cors";
 
@@ -57,6 +57,7 @@ app.get("/products", async (req, res) => {
 
   const collection = req.query.collection;
   const category = req.query.category;
+  const search = req.query.search;
 
   if (collection && category == null) {
     const products = await prisma.product.findMany({
@@ -70,6 +71,24 @@ app.get("/products", async (req, res) => {
       where: {
         collectionId: parseInt(collection),
         categoryId: parseInt(category),
+      },
+    });
+    return res.json({ products });
+  } else if (search) {
+    const products = await prisma.product.findMany({
+      where: {
+        OR: [
+          {
+            name: {
+              contains: search,
+            },
+          },
+          {
+            description: {
+              contains: search,
+            },
+          },
+        ],
       },
     });
     return res.json({ products });

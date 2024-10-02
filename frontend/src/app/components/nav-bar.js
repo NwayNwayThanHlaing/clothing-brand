@@ -1,24 +1,26 @@
 "use client";
 
 import { NavbarContext } from "../context/nav-bar";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   const [searchBool, setSearchBool] = useState(false);
-  const [searchValue, setSearchValue] = useState("");
+  const { setSearchValue } = useContext(NavbarContext);
   const { setSelectedCollection, setSelectedCategory, collections } =
     useContext(NavbarContext);
 
   const handleCollection = (col) => {
     setSelectedCollection(col);
     setSelectedCategory(null);
+    setSearchValue(null);
   };
   const handleCategory = (cat, col) => {
     setSelectedCategory(cat);
     setSelectedCollection(col);
+    setSearchValue(null);
   };
 
   return (
@@ -92,10 +94,10 @@ export default function Navbar() {
             <Link
               className=" border border-gray-300 bg-gray-100 border-l-0 rounded-tr-xl rounded-br-xl px-2 h-7"
               onClick={() => {
+                setSearchBool(!searchBool);
                 setSearchValue(
                   document.querySelector("input[name='search']").value
                 );
-                setSearchBool(!searchBool);
               }}
               href="/products"
             >

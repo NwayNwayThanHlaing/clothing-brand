@@ -11,8 +11,8 @@ export default function ProductPage() {
   const [bool, setBool] = useState(false);
   const [sortBy, setSortBy] = useState("default");
   const [sorted, setSorted] = useState([]);
-  const { selectedCollection, setSelectedCollection } =
-    useContext(NavbarContext);
+  const { searchValue } = useContext(NavbarContext);
+  const { selectedCollection } = useContext(NavbarContext);
   const { selectedCategory, setSelectedCategory } = useContext(NavbarContext);
 
   const collectionPath = selectedCollection
@@ -21,14 +21,22 @@ export default function ProductPage() {
   const categoryPath = selectedCategory
     ? `&category=${selectedCategory.id}`
     : "";
+  const searchPath = searchValue ? `?search=${searchValue}` : "";
+
+  let path = "";
+  if (searchPath) {
+    path = `${searchPath}`;
+  } else {
+    path = `${collectionPath}${categoryPath}`;
+  }
 
   useEffect(() => {
-    fetch("http://localhost:3333/products" + collectionPath + categoryPath)
+    fetch("http://localhost:3333/products" + path)
       .then((res) => res.json())
       .then((data) => {
         setSorted(data.products);
       });
-  }, [selectedCollection, selectedCategory]);
+  }, [selectedCollection, selectedCategory, searchValue]);
 
   // Sorting
   useEffect(() => {
@@ -50,22 +58,31 @@ export default function ProductPage() {
       <div className="w-full">
         <div className="py-3 px-5 grid-cols-2 flex justify-between">
           <div>
-            <span className="cursor-pointer hover:underline">
-              {selectedCollection ? (
-                <span onClick={() => setSelectedCategory(null)}>
-                  {selectedCollection.name + " "}
-                </span>
-              ) : (
-                "All Products "
-              )}
-            </span>
-            {selectedCategory ? (
-              <span>
-                &gt; &nbsp;
-                {selectedCategory.name}
+            {searchValue ? (
+              <span className="text-gray-500">
+                Search results for:
+                <span className="italic"> "{searchValue}"</span>
               </span>
             ) : (
-              ""
+              <div>
+                <span className="cursor-pointer hover:underline">
+                  {selectedCollection ? (
+                    <span onClick={() => setSelectedCategory(null)}>
+                      {selectedCollection.name + " "}
+                    </span>
+                  ) : (
+                    "All Products "
+                  )}
+                </span>
+                {selectedCategory ? (
+                  <span>
+                    &gt; &nbsp;
+                    {selectedCategory.name}
+                  </span>
+                ) : (
+                  ""
+                )}
+              </div>
             )}
           </div>
 

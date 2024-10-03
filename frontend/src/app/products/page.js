@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareXmark } from "@fortawesome/free-solid-svg-icons";
 import { NavbarContext } from "../context/nav-bar";
 import { useContext } from "react";
+import Filter from "../components/filter";
 
 export default function ProductPage() {
   const [bool, setBool] = useState(false);
@@ -95,11 +96,14 @@ export default function ProductPage() {
             </button>
 
             {bool && (
-              <div className="w-1/6 fixed bg-gray-200 bg-opacity-95 right-0 top-20 flex flex-row-reverse h-screen z-50">
-                <div className="m-2">
+              <div className="w-1/6 fixed bg-gray-200 bg-opacity-95 right-0 top-20 h-screen z-50">
+                <div className="m-2 flex flex-row-reverse">
                   <button onClick={() => setBool(false)}>
                     <FontAwesomeIcon icon={faSquareXmark} cursor={"pointer"} />
                   </button>
+                </div>
+                <div className=" mx-7">
+                  <Filter />
                 </div>
               </div>
             )}

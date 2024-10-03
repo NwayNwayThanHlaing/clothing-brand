@@ -27,7 +27,14 @@ app.get("/categories", async (req, res) => {
 });
 
 app.get("/sizes", async (req, res) => {
-  const sizes = await prisma.size.findMany();
+  const sizes = await prisma.size.findMany({
+    include: {
+      products: true,
+    },
+    orderBy: {
+      id: "asc",
+    },
+  });
   res.json({ sizes });
 });
 
@@ -47,14 +54,44 @@ app.get("/collections", async (req, res) => {
   res.json({ collections });
 });
 
-app.get("/orders", async (req, res) => {
-  const orders = await prisma.order.findMany();
-  res.json({ orders });
+// filtered products
+app.get("/filteredProducts", async (req, res) => {
+  const { minimum, maximum, size } = req.query;
+
+  const query = {
+    where: {},
+    include: {
+      sizes: true,
+    },
+  };
+
+  if (size) {
+    query.where.sizes = {
+      some: {
+        sizeId: parseInt(size),
+      },
+    };
+  }
+  if (minimum) {
+    query.where.price = {
+      ...query.where.price,
+      gte: Number(minimum),
+    };
+  }
+  if (maximum) {
+    query.where.price = {
+      ...query.where.price,
+      lte: Number(maximum),
+    };
+  }
+
+  const products = await prisma.product.findMany(query);
+  return res.json({ products });
 });
 
+// products by (collection, category) or searched products
 app.get("/products", async (req, res) => {
   const products = await prisma.product.findMany();
-
   const collection = req.query.collection;
   const category = req.query.category;
   const search = req.query.search;
@@ -94,6 +131,11 @@ app.get("/products", async (req, res) => {
     return res.json({ products });
   }
   res.json({ products });
+});
+
+app.get("/orders", async (req, res) => {
+  const orders = await prisma.order.findMany();
+  res.json({ orders });
 });
 
 app.listen(port, () => {

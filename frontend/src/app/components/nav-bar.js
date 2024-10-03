@@ -1,7 +1,7 @@
 "use client";
 
 import { NavbarContext } from "../context/nav-bar";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -94,7 +94,6 @@ export default function Navbar() {
             <Link
               className=" border border-gray-300 bg-gray-100 border-l-0 rounded-tr-xl rounded-br-xl px-2 h-7"
               onClick={() => {
-                setSearchBool(!searchBool);
                 setSearchValue(
                   document.querySelector("input[name='search']").value
                 );
@@ -105,7 +104,7 @@ export default function Navbar() {
             </Link>
           </div>
         ) : (
-          <button onClick={() => setSearchBool(!searchBool)}>Search</button>
+          <button onClick={() => setSearchBool(true)}>Search</button>
         )}
         <Link className="nav-btn" href="/cart">
           Cart

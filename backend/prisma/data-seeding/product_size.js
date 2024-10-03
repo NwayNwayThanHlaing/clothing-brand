@@ -138,6 +138,18 @@ const productSizeData = [
     productId: 15,
     sizeId: 5,
   },
+  {
+    productId: 16,
+    sizeId: 1,
+  },
+  {
+    productId: 17,
+    sizeId: 2,
+  },
+  {
+    productId: 18,
+    sizeId: 3,
+  },
 ];
 
 export const seedProductSizes = async () => {

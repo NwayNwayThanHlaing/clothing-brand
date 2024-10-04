@@ -1,6 +1,7 @@
 "use client";
 
 import { NavbarContext } from "../context/nav-bar";
+import { FilterContext } from "../context/filter";
 import { useContext, useState } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,18 +10,31 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 export default function Navbar() {
   const [searchBool, setSearchBool] = useState(false);
   const { setSearchValue } = useContext(NavbarContext);
-  const { setSelectedCollection, setSelectedCategory, collections } =
-    useContext(NavbarContext);
+  const { setSelectedSizes, setMinPrice, setMaxPrice } =
+    useContext(FilterContext);
+  const {
+    selectedCategory,
+    selectedCollection,
+    setSelectedCollection,
+    setSelectedCategory,
+    collections,
+  } = useContext(NavbarContext);
 
+  function clearFilters() {
+    setSelectedSizes([]);
+    setMinPrice(null);
+    setMaxPrice(null);
+    setSearchValue(null);
+  }
   const handleCollection = (col) => {
     setSelectedCollection(col);
     setSelectedCategory(null);
-    setSearchValue(null);
+    clearFilters();
   };
   const handleCategory = (cat, col) => {
     setSelectedCategory(cat);
     setSelectedCollection(col);
-    setSearchValue(null);
+    clearFilters();
   };
 
   return (
@@ -31,6 +45,7 @@ export default function Navbar() {
           onClick={() => {
             setSelectedCollection(null);
             setSelectedCategory(null);
+            setSearchValue(null);
           }}
         >
           All
@@ -94,6 +109,7 @@ export default function Navbar() {
             <Link
               className=" border border-gray-300 bg-gray-100 border-l-0 rounded-tr-xl rounded-br-xl px-2 h-7"
               onClick={() => {
+                clearFilters();
                 setSearchValue(
                   document.querySelector("input[name='search']").value
                 );

@@ -20,18 +20,17 @@ export default function FilterProvider({ children }) {
       ? `&category=${selectedCategory.id}`
       : "";
 
-    let newPath = "";
-    if (searchValue) {
-      newPath = `?search=${searchValue}`;
-    } else if (selectedSizes.length || minPrice || maxPrice) {
-      const filterQuery = `?${selectedSizes
+    let newPath;
+    if (searchValue) newPath = `?search=${searchValue}`;
+    else newPath = collectionPath + categoryPath;
+    console.log(newPath);
+    if (selectedSizes.length || minPrice || maxPrice) {
+      const filterQuery = `&${selectedSizes
         .map((size) => `size=${size}`)
         .join("&")}${minPrice ? `&minimum=${minPrice}` : ""}${
         maxPrice ? `&maximum=${maxPrice}` : ""
       }`;
-      newPath = filterQuery;
-    } else {
-      newPath = `${collectionPath}${categoryPath}`;
+      newPath += filterQuery;
     }
 
     if (filteredPath !== newPath) {
@@ -46,7 +45,7 @@ export default function FilterProvider({ children }) {
     selectedCollection,
     filteredPath,
   ]);
-
+  console.log(filteredPath);
   return (
     <FilterContext.Provider
       value={{

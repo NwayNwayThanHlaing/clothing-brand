@@ -14,8 +14,7 @@ export default function ProductPage() {
   const [sorted, setSorted] = useState([]);
   const { searchValue, selectedCategory, selectedCollection } =
     useContext(NavbarContext);
-  const { setSelectedCollection, setSelectedCategory } =
-    useContext(NavbarContext);
+  const { setSelectedCategory } = useContext(NavbarContext);
   const { selectedSizes, setSelectedSizes, filteredPath } =
     useContext(FilterContext);
   const { minPrice, setMinPrice, maxPrice, setMaxPrice } =
@@ -64,12 +63,7 @@ export default function ProductPage() {
         <div className="py-3 px-5 grid-cols-2 flex justify-between">
           <div>
             {(() => {
-              // Check if there are any selected sizes, minPrice, or maxPrice
-              if (selectedSizes.length || minPrice || maxPrice) {
-                return <span className="text-gray-500">Filtered Result:</span>;
-              }
-              // Check if there is a search value
-              else if (searchValue) {
+              if (searchValue) {
                 return (
                   <span className="text-gray-500">
                     Search results for:
@@ -77,8 +71,9 @@ export default function ProductPage() {
                   </span>
                 );
               }
-              // Default case for displaying collection and category
-              else {
+              if (selectedSizes.length || minPrice || maxPrice) {
+                return <span className="text-gray-500"> Filtered Result:</span>;
+              } else {
                 return (
                   <div>
                     <span className="cursor-pointer hover:underline">
@@ -109,9 +104,7 @@ export default function ProductPage() {
           <div className="flex flex-row-reverse">
             <button
               onClick={() => {
-                setBool(true),
-                  setSelectedCollection(null),
-                  setSelectedCategory(null);
+                setBool(true);
               }}
               className="border-gray-500 border px-2 rounded-md"
             >

@@ -24,6 +24,10 @@ const productSizeData = [
   },
   {
     productId: 2,
+    sizeId: 1,
+  },
+  {
+    productId: 2,
     sizeId: 2,
   },
   {

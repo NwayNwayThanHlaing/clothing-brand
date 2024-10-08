@@ -8,9 +8,6 @@ export default function Filter() {
   const { selectedSizes, setSelectedSizes } = useContext(FilterContext);
   const { minPrice, setMinPrice } = useContext(FilterContext);
   const { maxPrice, setMaxPrice } = useContext(FilterContext);
-  const { filteredPath, setFilteredPath } = useContext(FilterContext);
-  const { setSearchValue, setSelectedCategory, setSelectedCollection } =
-    useContext(NavbarContext);
 
   useEffect(() => {
     fetch("http://localhost:3333/sizes")
@@ -56,11 +53,25 @@ export default function Filter() {
       </div>
       <div className="flex justify-center">
         <button
-          className="bg-neutral-300 mt-10 font-semibold text-sm text-black w-11/12 px-3 py-2 rounded-md hover:shadow-inner hover:shadow-gray-500"
+          className="bg-neutral-300 mt-10 font-semibold text-sm text-black px-3 py-2 rounded-md hover:shadow-inner hover:shadow-gray-500"
           onClick={() => {
-            setSearchValue(null);
-            setSelectedCollection(null);
-            setSelectedCategory(null);
+            const checkboxes = document.querySelectorAll('input[name="size"]');
+            const priceInputs = document.querySelectorAll(
+              'input[type="number"]'
+            );
+            priceInputs.forEach((input) => {
+              input.value = "";
+            });
+            checkboxes.forEach((checkbox) => {
+              checkbox.checked = false;
+            });
+          }}
+        >
+          CLEAR
+        </button>
+        <button
+          className="bg-neutral-300 mt-10 font-semibold text-sm text-black px-3 py-2 rounded-md hover:shadow-inner hover:shadow-gray-500"
+          onClick={() => {
             const selected = document.querySelectorAll(
               'input[name="size"]:checked'
             );

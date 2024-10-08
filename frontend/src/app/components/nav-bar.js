@@ -9,12 +9,10 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   const [searchBool, setSearchBool] = useState(false);
-  const { setSearchValue } = useContext(NavbarContext);
   const { setSelectedSizes, setMinPrice, setMaxPrice } =
     useContext(FilterContext);
   const {
-    selectedCategory,
-    selectedCollection,
+    setSearchValue,
     setSelectedCollection,
     setSelectedCategory,
     collections,
@@ -110,6 +108,11 @@ export default function Navbar() {
               className=" border border-gray-300 bg-gray-100 border-l-0 rounded-tr-xl rounded-br-xl px-2 h-7"
               onClick={() => {
                 clearFilters();
+                const checkboxes =
+                  document.querySelectorAll('input[name="size"]');
+                checkboxes.forEach((checkbox) => {
+                  checkbox.checked = false;
+                });
                 setSearchValue(
                   document.querySelector("input[name='search']").value
                 );
